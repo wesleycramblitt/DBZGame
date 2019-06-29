@@ -1,6 +1,10 @@
 # DBZGame
 Web Graphics Class project
 
-Just a project I created in school. Open Vegeta.js to start it up (desktop only)
+A small game I created in a web graphics class.
+
+View the Demo here: alphahacker.epizy.com/DBZ/Vegeta.html
+
+Make sure you open it with Firefox.
 
 
