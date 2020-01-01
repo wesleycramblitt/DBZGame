@@ -43,7 +43,7 @@ var vegetablast1 = false;
 ////window setup////////////////////////////////////////////////
 window.onkeydown = keydown;
 window.onkeyup = keyup;
-//window.onload = main;
+window.onload = main;
  this.load();
 
 /////////////////////////////////////////////////////////////////
@@ -103,28 +103,28 @@ function detectCollision(x1, y1, w1, h1, x2, y2, w2, h2) {
 //////Loading sounds and files///////////////////////////////////
 function load() {
     earth = new Image(1000, 400);
-    earth.src = '~/sprites/earth.gif';
+    earth.src = 'sprites/earth.gif';
 
     space = new Image(1000, 400);
-    space.src = '~/sprites/space.png';
+    space.src = 'sprites/space.png';
 
     flying = new Image();
-    flying.src = '~/sprites/flying.png';
+    flying.src = 'sprites/flying.png';
 
     powerup = new Image();
-    powerup.src = '~/sprites/powerup.png';
+    powerup.src = 'sprites/powerup.png';
 
     teleport = new Image();
-    teleport.src = '/sprites/horizontalspeed.png';
+    teleport.src = 'sprites/horizontalspeed.png';
 
     blast1Vegeta = new Image();
-    blast1Vegeta.src = '/sprites/blast1A.png';
+    blast1Vegeta.src = 'sprites/blast1A.png';
 
     blast1ball = new Image();
-    blast1ball.src = '/sprites/blast1B.png';
+    blast1ball.src = 'sprites/blast1B.png';
 
     boulder = new Image();
-    boulder.src = '/sprites/boulder.png';
+    boulder.src = 'sprites/boulder.png';
 
 
     //fxstartpowerup = document.getElementById("soundStartPowerup");
@@ -149,17 +149,17 @@ function drawBackground(showStartText) {
 
     if (showStartText) {
         // ctx.fillStyle = "#FF6600";
+		
+        // ctx.fontSize = "60px";
 
-        // ctx.font = "60px";
+        // ctx.fillText("PUSH ENTER TO START PLAYING!", 350, 50); //13
 
-        // ctx.fillText("Push Enter to start playing!", 350, 50); //13
+        // ctx.fontSize = "50px";
 
-        // ctx.font = "50px";
-
-        // ctx.fillText("Press q to change the background.", 1, 50); //81
-        // ctx.fillText("Press b to shoot a blast.", 1, 80);
-        // ctx.fillText("Press p to power up.", 1, 110);
-        // ctx.fillText("Use arrow keys to navigate.", 1, 140);
+        // ctx.fillText("PRESS Q TO CHANGE THE BACKGROUND.", 1, 50); //81
+        // ctx.fillText("PRESS B TO SHOOT A BLAST.", 1, 80);
+        // ctx.fillText("PRESS P TO POWER UP.", 1, 110);
+        // ctx.fillText("USE ARROW KEYS TO NAVIGATE.", 1, 140);
     }
     ////
 }
@@ -183,7 +183,7 @@ function poweringup() {
 
     if (!animationStarted) {
         animationStarted = true;
-        //fxstartpowerup.play();
+        //fxpowerup.play();
         //fxstartpowerup.onplay = function () { fxpowerup.loop = true; fxpowerup.play(); }
 		fxpowerup.loop = true;
 		fxpowerup.play();
@@ -209,8 +209,8 @@ function startflying() {
                 ctx.drawImage(teleport, vx, vy);
                 break;
             case 2:
-                theme.loop = true;
-                theme.play();
+               // theme.loop = true;
+                //theme.play();
                 ctx.drawImage(flying, 0, 0, 30, 50, vx, vy, 30, 50);
                 break;
             case 3:
